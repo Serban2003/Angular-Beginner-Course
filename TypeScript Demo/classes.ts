@@ -1,4 +1,7 @@
-class Employee {
+// import {Login, User} from './interface';
+import * as UserLogin from './interface';
+
+class Employee implements UserLogin.Login{
     private id : number; //add ! to the variable to remove warning about constructor
     name : string; //add # to the variable to make it private (need to add to every occurence of the variable)
     protected address : string; //available to the class and the clases which extend it
@@ -23,6 +26,10 @@ class Employee {
 
     static getEmployeeCount() : number {
         return Employee.employeeCount;
+    }
+
+    Login(): UserLogin.User {
+        return {id: this.id, name : this.name, email : " "};
     }
 }
 
