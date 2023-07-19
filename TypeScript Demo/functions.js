@@ -11,8 +11,15 @@ const mult = function (num1, num2) {
     return num1 * num2;
 };
 console.log(mult(1, 2));
+//Rest parameter
 function add2(num1, num2, ...num3) {
     return num1 + num2 + num3.reduce((a, b) => a + b, 0);
 }
-let numbers = [1, 2, 3, 4, 5];
-console.log(add2(2, 3, ...numbers));
+console.log(add2(2, 3, ...[1, 2, 3]));
+console.log(add2(2, 3, 4, 5, 6));
+//Generic function
+function getItems(items) {
+    return new Array().concat(items);
+}
+let concatResult = getItems([1, 2, 3, 4, 5]);
+let concatString = getItems(["a", "b", "c", "d"]);
