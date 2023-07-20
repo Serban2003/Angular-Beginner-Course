@@ -41,3 +41,4 @@ class Manager extends Employee {
 let mike = new Manager(1, "Mike", "Arizona");
 console.log(mike.getNameWithAddress());
 console.log(Employee.getEmployeeCount());
+//# sourceMappingURL=classes.js.map
