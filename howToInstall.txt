@@ -10,3 +10,9 @@ tsc --init
 npm i @angular/cli -g
 ng new "name of workplace"
 ng g app "name of project"
+
+//run application locally
+ng serve -o
+
+//create component
+ng g c "name"
