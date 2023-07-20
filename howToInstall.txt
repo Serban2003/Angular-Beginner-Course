@@ -1,3 +1,12 @@
+//Node and TypeScript
+
 npm init
 npm i typescript
 tsc --init
+
+
+//Angular CLI
+
+npm i @angular/cli -g
+ng new "name of workplace"
+ng g app "name of project"
