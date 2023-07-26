@@ -17,5 +17,8 @@ ng serve -o
 //create component
 ng g c "name"
 
+//create service
+bg g s "name"
+
 //install Bootstrap
 ng add ngx-bootstrap
