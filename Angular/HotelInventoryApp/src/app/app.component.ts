@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Optional, ViewChild, ViewContainerRef } from '@angular/core';
 import { RoomsComponent } from './rooms/rooms.component';
+import { LoggerService } from './logger.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,16 @@ import { RoomsComponent } from './rooms/rooms.component';
 export class AppComponent implements OnInit, AfterViewInit{
   title = 'HotelInventoryApp';
   role = 'Admin';
+  
+  constructor(@Optional() private loggerService : LoggerService){
+    
+  }
 
   @ViewChild('user', { read : ViewContainerRef }) vcr! : ViewContainerRef;
   @ViewChild('name', { static  : true }) name! : ElementRef;
 
   ngOnInit(): void {
+    this.loggerService.Log("AppComponent.ngOnInit()");
     this.name.nativeElement.innerText = "Hilton Hotel";
   }
 

@@ -1,4 +1,4 @@
-import { AfterViewChecked, AfterViewInit, Component, DoCheck, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, DoCheck, QueryList, SkipSelf, ViewChild, ViewChildren } from '@angular/core';
 import { Room, RoomList} from './rooms';
 import { HeaderComponent } from '../header/header.component';
 import { RoomsService } from './services/rooms.service';
@@ -51,7 +51,7 @@ export class RoomsComponent implements DoCheck, AfterViewInit, AfterViewChecked{
 
   @ViewChildren(HeaderComponent) headerChildrenComponent! : QueryList<HeaderComponent>;
 
-  constructor(private roomsService: RoomsService) { //services must be private!!
+  constructor(@SkipSelf() private roomsService: RoomsService) { //services must be private!!
     this.roomList = this.roomsService.roomList;
   }
 
